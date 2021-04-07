@@ -14,7 +14,7 @@ class AdminService
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:30',
             'description' => 'required|max:1000',
-            'phone_number' => 'required|regex:/[0-9]{11,16}/',
+            'phone_number' => 'required|min:11|max:16|regex:/[0-9]+/',
             'image' => 'required|mimes:jpg,jpeg,png'
         ]);
         return $validator;

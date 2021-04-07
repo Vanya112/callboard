@@ -9,7 +9,6 @@ use App\Services\FileService;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class AdminController extends Controller
 {
@@ -25,7 +24,8 @@ class AdminController extends Controller
         $this->fileService = new FileService();
     }
 
-    public function redirect() {
+    public function redirect()
+    {
         return redirect(route('index'));
     }
 

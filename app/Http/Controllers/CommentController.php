@@ -19,7 +19,8 @@ class CommentController extends Controller
         $this->commentService = new CommentService();
     }
 
-    public function addComment(Request $request, $announcement_id) {
+    public function addComment(Request $request, $announcement_id)
+    {
         try {
             $announcement = Announcement::findOrFail($announcement_id);
         } catch (ModelNotFoundException $exception) {
@@ -38,7 +39,8 @@ class CommentController extends Controller
         return redirect(route('getAnnouncement', compact('announcement_id', 'comments')));
     }
 
-    public function searchComments(Request $request, $announcement_id) {
+    public function searchComments(Request $request, $announcement_id)
+    {
         try {
             $announcement = Announcement::findOrFail($announcement_id);
         } catch (ModelNotFoundException $exception) {

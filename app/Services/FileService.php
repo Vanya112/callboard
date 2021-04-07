@@ -28,7 +28,7 @@ class FileService
         if (file_exists($imageFilePath)) {
             unlink($imageFilePath);
         }
-        if(file_exists($announcementDirPath)) {
+        if (file_exists($announcementDirPath)) {
             rmdir($announcementDirPath);
         }
         $count_elements = count(array_diff(scandir(storage_path('app/public') . "\\" . $copyOfAnnouncement->user_name), [".", ".."]));
